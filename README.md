@@ -25,6 +25,46 @@ In the admin side,
 - add recipes for the blog
 - remove recipes from the blog
 
-## CHANGES TO BE MADE
-- [x] new
-- [ ] hello
+## CHANGES LIST-BOX
+
+### USER
+
+- [ ] index.php
+- [ ] about.php
+- [ ] contact.php
+- [ ] login.php
+- [ ] menu.php
+- [ ] quickview.php
+- [ ] profile.php
+- [ ] register.php
+- [ ] category.php
+- [ ] checkout.php
+- [ ] orders.php
+- [ ] faves.php
+- [ ] search.php
+- [ ] update-address.php
+- [ ] update-profile.php
+
+### ADMIN
+- [ ] index.php
+- [ ] dashboard.php
+- [ ] admin-accounts.php
+- [ ] messages.php
+- [ ] placed-orders.php
+- [ ] recipes.php
+- [ ] register-admin.php
+- [ ] update-recipe.php
+- [ ] update-profile.php
+- [ ] user-accounts.php
+
+### CSS
+
+- [ ] admin-styles.css
+- [ ] style.css
+
+### JS
+
+- [ ] admin-script.js
+- [ ] script.css
+
+## ISSUES
