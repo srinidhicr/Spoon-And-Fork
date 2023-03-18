@@ -46,16 +46,16 @@ In the admin side,
 - [ ] update-profile.php
 
 ### ADMIN
-- [ ] index.php
-- [ ] dashboard.php
-- [ ] admin-accounts.php
-- [ ] messages.php
-- [ ] placed-orders.php
-- [ ] recipes.php
-- [ ] register-admin.php
+- [x] index.php
+- [x] dashboard.php
+- [x] admin-accounts.php
+- [x] messages.php
+~~- [ ] placed-orders.php~~
+- [x] recipes.php
+- [x] register-admin.php
 - [ ] update-recipe.php
-- [ ] update-profile.php
-- [ ] user-accounts.php
+- [x] update-profile.php
+- [x] user-accounts.php
 
 ### CSS
 
@@ -68,3 +68,5 @@ In the admin side,
 - [ ] script.css
 
 ## ISSUES
+
+- [ ] IMAGE NOT VISIBLE IN ADD RECIPE SECTION - ADMIN
