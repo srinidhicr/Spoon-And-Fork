@@ -30,26 +30,26 @@ In the admin side,
 ### USER
 
 - [ ] index.php
-- [ ] about.php
-- [ ] contact.php
-- [ ] login.php
-- [ ] menu.php
-- [ ] quickview.php
-- [ ] profile.php
-- [ ] register.php
-- [ ] category.php
-- [ ] checkout.php
-- [ ] orders.php
+- [x] about.php
+- [x] contact.php
+- [x] login.php
+- [x] menu.php
+- [x] quickview.php
+- [x] profile.php
+- [x] register.php
+- [x] category.php
+~~- [x] checkout.php ~~
+- [ ] orders.php --> no need for this..see to it
 - [ ] faves.php
 - [ ] search.php
-- [ ] update-address.php
-- [ ] update-profile.php
+~~- [ ] update-address.php
+- [ ]  [x] update-profile.php
 
 ### ADMIN
 - [x] index.php
 - [x] dashboard.php
 - [x] admin-accounts.php
-- [x] messages.php\n
+- [x] messages.php
 ~~- [ ] placed-orders.php~~
 - [x] recipes.php
 - [x] register-admin.php
@@ -67,6 +67,17 @@ In the admin side,
 - [ ] admin-script.js
 - [ ] script.css
 
+### COMPONENTS
+- [ ] add-faves.php
+- [ ] admin-header.php
+- [ ] admin-logout.php
+- [x] connect.php
+- [x] footer.php
+- [ ] user-header.php
+- [ ] user-logout.php
+
 ## ISSUES
 
 - [ ] IMAGE NOT VISIBLE IN ADD RECIPE SECTION - ADMIN
+- [ ] ADD TO FAVOURITES NOT WORKING PROPERLY - QUICK-VIEW
+- [ ] ICON FOR FAVES TO BE ADDED - USER-HEADER - CURRENTLY NOTHING IS THERE.
