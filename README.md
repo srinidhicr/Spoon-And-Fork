@@ -26,4 +26,5 @@ In the admin side,
 - remove recipes from the blog
 
 ## CHANGES TO BE MADE
--[x] new
+- [x] new
+- [ ] hello
