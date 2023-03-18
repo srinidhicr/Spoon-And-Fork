@@ -101,7 +101,7 @@ if(isset($_GET['delete'])){
       <textarea type="text" required placeholder="enter recipe instructions" name="instr" maxlength="10000000" class="box" style="height: 500px"></textarea>
       <select name="category" class="box" required>
          <option value="" disabled selected>select category --</option>
-         <option value="starters">starters</option>
+         <option value="starters">starter</option>
          <option value="main dish">main dish</option>
          <option value="snacks">snacks</option>
          <option value="desserts">desserts</option>
@@ -149,14 +149,6 @@ if(isset($_GET['delete'])){
 </section>
 
 <!-- show recipes section ends -->
-
-
-
-
-
-
-
-
 
 
 <!-- custom js file link  -->

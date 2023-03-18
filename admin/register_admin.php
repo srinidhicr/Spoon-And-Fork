@@ -74,20 +74,6 @@ if(isset($_POST['submit'])){
 <!-- register admin section ends -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- custom js file link  -->
 <script src="../js/admin_script.js"></script>
 
