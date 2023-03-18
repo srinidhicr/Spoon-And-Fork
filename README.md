@@ -1,6 +1,6 @@
 # food-blog
 
-A food blog called Spoon & Fork built primarily using php, css and js.
+A food blog called Spoon & Fork built primarily using php, css, js and sql.
 It consists of two interfaces - user and admin.
 
 ### USER SIDE 
