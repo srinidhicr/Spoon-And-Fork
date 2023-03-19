@@ -41,7 +41,7 @@ In the admin side,
 ~~- [x] checkout.php ~~
 - [ ] orders.php --> no need for this..see to it
 - [ ] faves.php
-- [ ] search.php
+- [x] search.php
 ~~- [ ] update-address.php
 - [ ]  [x] update-profile.php
 
@@ -74,7 +74,7 @@ In the admin side,
 - [x] connect.php
 - [x] footer.php
 - [ ] user-header.php
-- [ ] user-logout.php
+- [x] user-logout.php
 
 ## ISSUES
 
