@@ -12,6 +12,7 @@ In the user side,
 - view recipes based on category
 - add recipes as favourites
 - send a message/feedback to the admin
+- search for a recipe
 
 
 ### ADMIN SIDE
