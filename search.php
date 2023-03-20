@@ -54,25 +54,20 @@ include 'components/add_faves.php';
       <?php
          if(isset($_POST['search_box']) OR isset($_POST['search_btn'])){
          $search_box = $_POST['search_box'];
-         $select_recipes = $conn->prepare("SELECT * FROM `recipes` WHERE name LIKE '%{$search_box}%'");
+         $select_recipes = $conn->prepare("SELECT * FROM `recipes` WHERE recipeName LIKE '%{$search_box}%'");
          $select_recipes->execute();
          if($select_recipes->rowCount() > 0){
             while($fetch_recipes = $select_recipes->fetch(PDO::FETCH_ASSOC)){
       ?>
       <form action="" method="post" class="box">
-         <input type="hidden" name="rid" value="<?= $fetch_recipes['id']; ?>">
-         <input type="hidden" name="name" value="<?= $fetch_recipes['name']; ?>">
-         <input type="hidden" name="price" value="<?= $fetch_recipes['price']; ?>">
+         <input type="hidden" name="rid" value="<?= $fetch_recipes['recipeID']; ?>">
+         <input type="hidden" name="name" value="<?= $fetch_recipes['recipeName']; ?>">
          <input type="hidden" name="image" value="<?= $fetch_recipes['image']; ?>">
-         <a href="quick_view.php?rid=<?= $fetch_recipes['id']; ?>" class="fas fa-eye"></a>
+         <a href="quick_view.php?rid=<?= $fetch_recipes['recipeID']; ?>" class="fas fa-eye"></a>
          <button type="submit" class="fas fa-shopping-faves" name="add_to_faves"></button>
          <img src="uploaded_img/<?= $fetch_recipes['image']; ?>" alt="">
          <a href="category.php?category=<?= $fetch_recipes['category']; ?>" class="cat"><?= $fetch_recipes['category']; ?></a>
-         <div class="name"><?= $fetch_recipes['name']; ?></div>
-         <div class="flex">
-            <div class="price"><span>$</span><?= $fetch_recipes['price']; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-         </div>
+         <div class="name"><?= $fetch_recipes['recipeName']; ?></div>
       </form>
       <?php
             }

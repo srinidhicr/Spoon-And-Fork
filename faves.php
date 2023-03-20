@@ -25,6 +25,7 @@ if(isset($_POST['delete_all'])){
    $message[] = 'deleted all from faves!';
 }
 
+/*
 if(isset($_POST['update_qty'])){
    $faves_id = $_POST['faves_id'];
    $qty = $_POST['qty'];
@@ -33,8 +34,7 @@ if(isset($_POST['update_qty'])){
    $update_qty->execute([$qty, $faves_id]);
    $message[] = 'faves quantity updated';
 }
-
-$grand_total = 0;
+*/
 
 ?>
 
@@ -73,11 +73,11 @@ $grand_total = 0;
    <div class="box-container">
 
       <?php
-         $grand_total = 0;
          $select_faves = $conn->prepare("SELECT * FROM `faves` WHERE user_id = ?");
          $select_faves->execute([$user_id]);
          if($select_faves->rowCount() > 0){
             while($fetch_faves = $select_faves->fetch(PDO::FETCH_ASSOC)){
+         
       ?>
       <form action="" method="post" class="box">
          <input type="hidden" name="faves_id" value="<?= $fetch_faves['id']; ?>">
@@ -85,15 +85,9 @@ $grand_total = 0;
          <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('delete this recipe?');"></button>
          <img src="uploaded_img/<?= $fetch_faves['image']; ?>" alt="">
          <div class="name"><?= $fetch_faves['name']; ?></div>
-         <div class="flex">
-            <div class="price"><span>$</span><?= $fetch_faves['price']; ?></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_faves['quantity']; ?>" maxlength="2">
-            <button type="submit" class="fas fa-edit" name="update_qty"></button>
-         </div>
-         <div class="sub-total"> sub total : <span>$<?= $sub_total = ($fetch_faves['price'] * $fetch_faves['quantity']); ?>/-</span> </div>
       </form>
       <?php
-               $grand_total += $sub_total;
+               
             }
          }else{
             echo '<p class="empty">you haven\'t picked any favourites!</p>';
@@ -102,10 +96,20 @@ $grand_total = 0;
 
    </div>
 
+   <?php
+   $delete_all_disabled = false;
+   $select_faves = $conn->prepare("SELECT * FROM `faves` WHERE user_id = ?");
+   $select_faves->execute([$user_id]);
+   if ($select_faves->rowCount() == 0) {
+      $delete_all_disabled = true;
+   }
+   ?>
 
    <div class="more-btn">
       <form action="" method="post">
-         <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('delete all from faves?');">delete all</button>
+         <button type="submit" class="delete-btn <?= $delete_all_disabled ? 'disabled' : ''; ?>"
+                  name="delete_all" onclick="return confirm('delete all from faves?');">delete all
+         </button>
       </form>
       <a href="menu.php" class="btn">continue searching for delicacies!</a>
    </div>
