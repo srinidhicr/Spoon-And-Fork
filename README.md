@@ -6,13 +6,13 @@ It consists of two interfaces - user and admin.
 ### USER SIDE 
 
 In the user side, 
-- login to save their contents
-- update their profile
+- login to save user data
+- update user profile
 - surf through a variety of recipes 
+- search for a recipe
 - view recipes based on category
 - add recipes as favourites
 - send a message/feedback to the admin
-- search for a recipe
 
 
 ### ADMIN SIDE
@@ -25,12 +25,13 @@ In the admin side,
 - delete a user
 - add recipes for the blog
 - remove recipes from the blog
+- update recipes from blog
 
 ## CHANGES LIST-BOX
 
 ### USER
 
-- [ ] index.php
+- [x] index.php
 - [x] about.php
 - [x] contact.php
 - [x] login.php
@@ -39,19 +40,15 @@ In the admin side,
 - [x] profile.php
 - [x] register.php
 - [x] category.php
-~~- [x] checkout.php ~~
-- [ ] orders.php --> no need for this..see to it
-- [ ] faves.php
+- [x] faves.php
 - [x] search.php
-~~- [ ] update-address.php
-- [ ]  [x] update-profile.php
+- [x] update-profile.php
 
 ### ADMIN
 - [x] index.php
 - [x] dashboard.php
 - [x] admin-accounts.php
 - [x] messages.php
-~~- [ ] placed-orders.php~~
 - [x] recipes.php
 - [x] register-admin.php
 - [ ] update-recipe.php
@@ -80,5 +77,5 @@ In the admin side,
 ## ISSUES
 
 - [ ] IMAGE NOT VISIBLE IN ADD RECIPE SECTION - ADMIN
-- [ ] ADD TO FAVOURITES NOT WORKING PROPERLY - QUICK-VIEW
-- [ ] ICON FOR FAVES TO BE ADDED - USER-HEADER - CURRENTLY NOTHING IS THERE.
+- [x] ADD TO FAVOURITES NOT WORKING PROPERLY - QUICK-VIEW
+- [x] ICON FOR FAVES TO BE ADDED - USER-HEADER - CURRENTLY NOTHING IS THERE.
