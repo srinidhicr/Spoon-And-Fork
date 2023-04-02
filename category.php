@@ -51,7 +51,7 @@ include 'components/add_faves.php';
          <input type="hidden" name="name" value="<?= $fetch_recipes['recipeName']; ?>">
          <input type="hidden" name="image" value="<?= $fetch_recipes['image']; ?>">
          <a href="quick_view.php?rid=<?= $fetch_recipes['recipeID']; ?>" class="fas fa-eye"></a>
-         <button type="submit" class="fas fa-shopping-faves" name="add_to_faves"></button>
+         <button type="submit" class="fa-solid fa-heart" name="add_to_faves"></button>
          <img src="uploaded_img/<?= $fetch_recipes['image']; ?>" alt="">
          <div class="name"><?= $fetch_recipes['recipeName']; ?></div>
       </form>

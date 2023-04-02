@@ -69,7 +69,11 @@ CREATE TABLE `messages` (
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `messages`
+--
 
 CREATE TABLE `recipes` (
   `recipeID` int(100) NOT NULL,
@@ -81,14 +85,6 @@ CREATE TABLE `recipes` (
   `category` varchar(100) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
-
--- --------------------------------------------------------
-
 
 -- --------------------------------------------------------
 
@@ -127,12 +123,6 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `recipes`
 --
 ALTER TABLE `recipes`
@@ -143,10 +133,6 @@ ALTER TABLE `recipes`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -167,12 +153,6 @@ ALTER TABLE `messages`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
@@ -183,6 +163,38 @@ ALTER TABLE `recipes`
 --
 ALTER TABLE `users`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+--
+-- FOREIGN KEY for table `faves` attribute user_id
+--
+ALTER TABLE `faves`
+ADD CONSTRAINT `faves_user_id_fk`
+FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+ON DELETE CASCADE;
+
+--
+-- FOREIGN KEY for table `messages` attribute user_id
+--
+ALTER TABLE `messages`
+ADD CONSTRAINT `messages_user_id_fk`
+FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+ON DELETE CASCADE;
+
+--
+-- FOREIGN KEY for table `faves` attribute rid
+--
+ALTER TABLE `faves`
+ADD CONSTRAINT `faves_recipe_fk`
+FOREIGN KEY (`rid`) REFERENCES `recipes` (`recipeID`)
+ON DELETE CASCADE;
+
+--
+-- TRIGGER TO DELETE `faves` WHEN `recipes` IS DELETED
+--
+CREATE TRIGGER `delete_faves` AFTER DELETE ON `recipes`
+FOR EACH ROW DELETE FROM `faves` WHERE `id` = OLD.`recipeID`;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
