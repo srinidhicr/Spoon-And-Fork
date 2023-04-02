@@ -21,7 +21,6 @@ if(isset($message)){
          <a href="index.php">home</a>
          <a href="about.php">about</a>
          <a href="menu.php">recipes</a>
-         <!--<a href="orders.php">favourites</a>-->
          <a href="contact.php">contact</a>
       </nav>
 
@@ -32,7 +31,7 @@ if(isset($message)){
             $total_faves_items = $count_faves_items->rowCount();
          ?>
          <a href="search.php"><i class="fas fa-search"></i></a>
-         <a href="faves.php"><i class="fas fa-shopping-faves"></i><span>(<?= $total_faves_items; ?>)</span></a>
+         <a href="faves.php"><i class="fa-solid fa-heart"></i><span>(<?= $total_faves_items; ?>)</span></a>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="menu-btn" class="fas fa-bars"></div>
       </div>

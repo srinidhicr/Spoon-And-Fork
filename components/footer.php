@@ -18,13 +18,11 @@
       <div class="box">
          <img src="images/phone-icon.png" alt="">
          <h3>our number</h3>
-         <a href="tel:8754959089">+91 87549 59089</a>
-         <a href="tel:9489513582">+91 94895 13582</a>
+         <a href="tel:8754959089">+91 99999 99999</a>
+         <a href="tel:9489513582">+91 99999 99999</a>
       </div>
 
    </section>
-
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>VGK & CRS</span> | all rights reserved</div>
 
 </footer>
 
