@@ -12,17 +12,23 @@ if(!isset($admin_id)){
 
 if(isset($_POST['update'])){
 
-   $pid = $_POST['pid'];
-   $pid = filter_var($pid, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $rid = $_POST['rid'];
+   $rid = filter_var($rid, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-   $price = $_POST['price'];
-   $price = filter_var($price, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $rdesc = $_POST['rdesc'];
+   $rdesc = filter_var($rdesc, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $ingredqty = $_POST['ingredqty'];
+   $ingredqty = filter_var($ingredqty, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $serves = $_POST['serves'];
+   $serves = filter_var($serves, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $instr = $_POST['instr'];
+   $instr = filter_var($instr, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-   $update_recipe = $conn->prepare("UPDATE `recipes` SET name = ?, category = ?, price = ? WHERE id = ?");
-   $update_recipe->execute([$name, $category, $price, $pid]);
+   $update_recipe = $conn->prepare("UPDATE `recipes` SET recipeName = ?, recipeDesc = ?, ingredqty = ?, serves = ?, recipeInstr = ?, category = ? WHERE recipeID = ?");
+   $update_recipe->execute([$name, $rdesc, $ingredqty, $serves, $instr, $category, $rid]);
 
    $message[] = 'product updated!';
 
@@ -37,8 +43,8 @@ if(isset($_POST['update'])){
       if($image_size > 2000000){
          $message[] = 'images size is too large!';
       }else{
-         $update_image = $conn->prepare("UPDATE `recipes` SET image = ? WHERE id = ?");
-         $update_image->execute([$image, $pid]);
+         $update_image = $conn->prepare("UPDATE `recipes` SET image = ? WHERE recipeID = ?");
+         $update_image->execute([$image, $rid]);
          move_uploaded_file($image_tmp_name, $image_folder);
          unlink('../uploaded_img/'.$old_image);
          $message[] = 'image updated!';
@@ -76,25 +82,31 @@ if(isset($_POST['update'])){
 
    <?php
       $update_id = $_GET['update'];
-      $show_recipes = $conn->prepare("SELECT * FROM `recipes` WHERE id = ?");
+      $show_recipes = $conn->prepare("SELECT * FROM `recipes` WHERE recipeID = ?");
       $show_recipes->execute([$update_id]);
       if($show_recipes->rowCount() > 0){
          while($fetch_recipes = $show_recipes->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <form action="" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="pid" value="<?= $fetch_recipes['id']; ?>">
+      <input type="hidden" name="rid" value="<?= $fetch_recipes['recipeID']; ?>">
+      <input type="hidden" name="name" value="<?= $fetch_recipes['recipeName']; ?>">
       <input type="hidden" name="old_image" value="<?= $fetch_recipes['image']; ?>">
       <img src="../uploaded_img/<?= $fetch_recipes['image']; ?>" alt="">
-      <span>update name</span>
-      <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box" value="<?= $fetch_recipes['name']; ?>">
-      <span>update price</span>
-      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_recipes['price']; ?>">
+      <span>update recipeName</span>
+      <input type="text" required placeholder="enter product recipeName" name="name" maxlength="100" class="box" value="<?= $fetch_recipes['recipeName']; ?>">
+      <span>update recipe description</span>
+      <textarea type="text" required placeholder="enter recipe descriptions" name="rdesc" maxlength="10000000" class="box" style="height: 200px"><?= $fetch_recipes['recipeDesc']; ?></textarea>
+      <span>update ingredients</span>
+      <textarea type="text" required placeholder="enter recipe ingredients and quantity" name="ingredqty" maxlength="10000000" class="box" style="height: 400px"><?= $fetch_recipes['ingredQty']; ?></textarea>
+      <span>update serves</span>
+      <input type="number" min="0" max="9999999999" required placeholder="enter recipe serves" name="serves" onkeypress="if(this.value.length == 10) return false;" class="box" value="<?= $fetch_recipes['serves']; ?>">
+      <span>update instructions</span>
+      <textarea type="text" required placeholder="enter recipe instructions" name="instr" maxlength="10000000" class="box" style="height: 500px"><?= $fetch_recipes['recipeInstr']; ?></textarea>
       <span>update category</span>
       <select name="category" class="box" required>
-         <option selected value="<?= $fetch_recipes['category']; ?>"><?= $fetch_recipes['category']; ?></option>
-         <option value="main dish">main dish</option>
-         <option value="fast food">fast food</option>
-         <option value="drinks">drinks</option>
+         <option value="starters">starters</option>
+         <option value="main dishes">main dishes</option>
+         <option value="snacks">snacks</option>
          <option value="desserts">desserts</option>
       </select>
       <span>update image</span>

@@ -6,7 +6,7 @@
    --orange:#f39c12;
    --black:#34495e;
    --white:#fff;
-   --light-bg:#f5f5f5;
+   --light-bg:#ecf0f9;
    --light-color:#999;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -420,45 +420,6 @@ section{
 .update-product form span{
    font-size: 1.7rem;
    color:var(--black);
-}
-
-.placed-orders .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
-   gap:1.5rem;
-   justify-content: center;
-   align-items: flex-start;
-}
-
-.placed-orders .box-container .box{
-   background-color: var(--white);
-   border-radius: .5rem;
-   box-shadow: var(--box-shadow);
-   border:var(--border);
-   padding:2rem;
-   padding-top: 1rem;
-}
-
-.placed-orders .box-container .box p{
-   padding: .5rem 0;
-   line-height: 1.5;
-   font-size: 1.8rem;
-   color:var(--black);
-}
-
-.placed-orders .box-container .box p span{
-   color:var(--main-color);
-}
-
-.placed-orders .box-container .box .drop-down{
-   width: 100%;
-   margin:1rem 0;
-   background-color: var(--light-bg);
-   padding:1rem 1.4rem;
-   font-size: 2rem;
-   color:var(--black);
-   border:var(--border);
-   border-radius: .5rem;
 }
 
 .accounts .box-container{
