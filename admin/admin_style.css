@@ -385,7 +385,7 @@ section{
    font-size: 1.5rem;
 }
 
-.update-product form{
+.update-recipe form{
    margin:0 auto;
    max-width: 50rem;
    background-color: var(--white);
@@ -395,13 +395,13 @@ section{
    padding:2rem;
 }
 
-.update-product form img{
+.update-recipe form img{
    height: 25rem;
    width: 100%;
    object-fit: contain;
 }
 
-.update-product form .box{
+.update-recipe form .box{
    background-color: var(--light-bg);
    border:var(--border);
    width: 100%;
@@ -412,12 +412,12 @@ section{
    margin: 1rem 0;
 }
 
-.update-product form textarea{
+.update-recipe form textarea{
    height: 15rem;
    resize: none;
 }
 
-.update-product form span{
+.update-recipe form span{
    font-size: 1.7rem;
    color:var(--black);
 }
@@ -476,15 +476,6 @@ section{
 .messages .box-container .box p span{
    color:var(--main-color);
 }
-
-
-
-
-
-
-
-
-
 
 
 

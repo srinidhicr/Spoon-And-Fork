@@ -38,6 +38,7 @@ if(isset($_GET['delete'])){
 
 <?php include '../components/admin_header.php' ?>
 
+
 <!-- admins accounts section starts  -->
 
 <section class="accounts">
@@ -81,18 +82,6 @@ if(isset($_GET['delete'])){
 </section>
 
 <!-- admins accounts section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

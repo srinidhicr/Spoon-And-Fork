@@ -30,7 +30,7 @@ if(isset($_POST['update'])){
    $update_recipe = $conn->prepare("UPDATE `recipes` SET recipeName = ?, recipeDesc = ?, ingredqty = ?, serves = ?, recipeInstr = ?, category = ? WHERE recipeID = ?");
    $update_recipe->execute([$name, $rdesc, $ingredqty, $serves, $instr, $category, $rid]);
 
-   $message[] = 'product updated!';
+   $message[] = 'recipe updated!';
 
    $old_image = $_POST['old_image'];
    $image = $_FILES['image']['name'];
@@ -61,7 +61,7 @@ if(isset($_POST['update'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update product</title>
+   <title>update recipe</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -74,11 +74,11 @@ if(isset($_POST['update'])){
 
 <?php include '../components/admin_header.php' ?>
 
-<!-- update product section starts  -->
+<!-- update recipe section starts  -->
 
-<section class="update-product">
+<section class="update-recipe">
 
-   <h1 class="heading">update product</h1>
+   <h1 class="heading">update recipe</h1>
 
    <?php
       $update_id = $_GET['update'];
@@ -93,7 +93,7 @@ if(isset($_POST['update'])){
       <input type="hidden" name="old_image" value="<?= $fetch_recipes['image']; ?>">
       <img src="../uploaded_img/<?= $fetch_recipes['image']; ?>" alt="">
       <span>update recipeName</span>
-      <input type="text" required placeholder="enter product recipeName" name="name" maxlength="100" class="box" value="<?= $fetch_recipes['recipeName']; ?>">
+      <input type="text" required placeholder="enter recipe recipeName" name="name" maxlength="100" class="box" value="<?= $fetch_recipes['recipeName']; ?>">
       <span>update recipe description</span>
       <textarea type="text" required placeholder="enter recipe descriptions" name="rdesc" maxlength="10000000" class="box" style="height: 200px"><?= $fetch_recipes['recipeDesc']; ?></textarea>
       <span>update ingredients</span>
@@ -125,14 +125,7 @@ if(isset($_POST['update'])){
 
 </section>
 
-<!-- update product section ends -->
-
-
-
-
-
-
-
+<!-- update recipe section ends -->
 
 
 

@@ -6,6 +6,7 @@
    --white:#fff;
    --black:#222;
    --light-color:#777;
+   --light-bg:#fff8c8;
    --border:.2rem solid var(--black);
 }
 
@@ -362,7 +363,7 @@ section{
 }
 
 .recipes .box-container .box .fa-eye,
-.recipes .box-container .box .fa-shopping-faves{
+.recipes .box-container .box .fa-heart{
    position: absolute;
    top:1rem;
    height: 4.5rem;
@@ -378,7 +379,7 @@ section{
 }
 
 .recipes .box-container .box .fa-eye:hover,
-.recipes .box-container .box .fa-shopping-faves:hover{
+.recipes .box-container .box .fa-heart:hover{
    background-color: var(--black);
    color:var(--white);
 }
@@ -387,7 +388,7 @@ section{
    left: -10rem;
 }
 
-.recipes .box-container .box .fa-shopping-faves{
+.recipes .box-container .box .fa-heart{
    right: -10rem;
 }
 
@@ -395,7 +396,7 @@ section{
    left: 1rem;
 }
 
-.recipes .box-container .box:hover .fa-shopping-faves{
+.recipes .box-container .box:hover .fa-heart{
    right: 1rem;
 }
 
@@ -420,24 +421,6 @@ section{
    align-items: center;
    gap:1rem;
    margin-top: 1.5rem;
-}
-
-.recipes .box-container .box .flex .price{
-   margin-right: auto;
-   font-size: 2.5rem;
-   color:var(--black);
-}
-
-.recipes .box-container .box .flex .price span{
-   color:var(--light-color);
-   font-size: 1.8rem;
-}
-
-.recipes .box-container .box .flex .qty{
-   padding:1rem;
-   border:var(--border);
-   font-size: 1.8rem;
-   color:var(--black);
 }
 
 .recipes .box-container .box .flex .fa-edit{
@@ -473,43 +456,9 @@ section{
    color:var(--white);
 }
 
-.recipes .box-container .box .sub-total{
-   margin-top: 1rem;
-   font-size: 1.8rem;
-   color:var(--light-color);
-}
-
-.recipes .box-container .box .sub-total span{
-   color:var(--red);
-}
-
 .recipes .more-btn{
    margin-top: 1rem;
    text-align: center;
-}
-
-.recipes .faves-total{
-   display: flex;
-   align-items: center;
-   gap:1.5rem;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   margin-top: 3rem;
-   border:var(--border);
-   padding:1rem;
-}
-
-.recipes .faves-total p{
-   font-size: 2.5rem;
-   color:var(--light-color);
-}
-
-.recipes .faves-total p span{
-   color:var(--red);
-}
-
-.recipes .faves-total .btn{
-   margin-top: 0;
 }
 
 .about .row{
@@ -686,105 +635,6 @@ section{
    color:var(--black);
 }
 
-.checkout form{
-   max-width: 45rem;
-   margin:0 auto;
-   border:var(--border);
-   padding:2rem;
-}
-
-.checkout form h3{
-   font-size: 2.5rem;
-   text-transform: capitalize;
-   padding: 2rem 0;
-   color:var(--black);
-}
-
-.checkout form .faves-items{
-   background-color: var(--black);
-   padding:2rem;
-   padding-top: 0;
-}
-
-.checkout form .faves-items h3{
-   color:var(--white);
-}
-
-.checkout form .faves-items p{
-   display: flex;
-   align-items: center;
-   gap:1.5rem;
-   justify-content: space-between;
-   margin:1rem 0;
-   line-height: 1.5;
-   font-size: 2rem;
-}
-
-.checkout form .faves-items p .name{
-   color:var(--light-color);
-}
-
-.checkout form .faves-items p .price{
-   color:var(--yellow);
-}
-
-.checkout form .faves-items .grand-total{
-   background-color: var(--white);
-   padding:.5rem 1.5rem;
-}
-
-.checkout form .faves-items .grand-total .price{
-   color:var(--red);
-}
-
-.checkout form .user-info p{ 
-   font-size: 2rem;
-   line-height: 1.5;
-   padding:1rem 0;
-}
-
-.checkout form .user-info p i{
-   color:var(--light-color);
-   margin-right: 1rem;
-}
-
-.checkout form .user-info p span{
-   color:var(--black);
-}
-
-.checkout form .user-info .box{
-   width: 100%;
-   border:var(--border);
-   padding:1.4rem;
-   margin-top: 2rem;
-   margin-bottom: 1rem;
-   font-size: 1.8rem;
-}
-
-.orders .box-container{
-   display: flex;
-   flex-wrap: wrap;
-   gap:1.5rem;
-   align-items: flex-start;
-}
-
-.orders .box-container .box{
-   padding:1rem 2rem;
-   border:var(--border);
-   flex:1 1 40rem;
-}
-
-.orders .box-container .box p{
-   line-height: 1.5;
-   margin:1rem 0;
-   font-size: 2rem;
-   color:var(--light-color);
-}
-
-.orders .box-container .box p span{
-   color:var(--black);
-}
-
 .form-container form{
    border:var(--border);
    margin:0 auto;
@@ -952,8 +802,6 @@ section{
 
 
 
-
-
 .footer .grid{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
@@ -991,20 +839,6 @@ section{
 
 .footer .grid .box a:hover{
    text-decoration: underline;
-}
-
-.credit{
-   padding:3rem 2rem;
-   text-align: center;
-   background-color: var(--black);
-   color:var(--white);
-   font-size: 2rem;
-   text-transform: capitalize;
-   /* padding-bottom: 10rem; */
-}
-
-.credit span{
-   color:var(--yellow);
 }
 
 .loader{
@@ -1084,11 +918,6 @@ section{
 
    .heading h3{
       font-size: 3.5rem;
-   }
-
-   .recipes .faves-total{
-      padding:1.5rem;
-      justify-content: center;
    }
 
    .flex-btn{
