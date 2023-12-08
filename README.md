@@ -27,7 +27,3 @@ In the admin side,
 - remove recipes from the blog
 - update recipes from blog
 
-
-## ISSUES
-
-- [ ] IMAGE NOT VISIBLE IN ADD RECIPE SECTION - ADMIN
